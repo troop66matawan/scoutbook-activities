@@ -4,7 +4,7 @@ const ScoutbookBaseLog = require('./activityBase');
 class ScoutbookServiceLog extends ScoutbookBaseLog {
     constructor(date,hours,location,notes) {
         super(date,hours,location,notes);
-        this.conservation = false;
+        this._conservation = false;
     }
     set hours(value){
         this.count = value;
@@ -13,10 +13,10 @@ class ScoutbookServiceLog extends ScoutbookBaseLog {
         return this.count;
     }
     set conservation(value) {
-        this.conservation = value;
+        this._conservation = value;
     }
     get conservation() {
-        return this.conservation;
+        return this._conservation;
     }
 }
 
