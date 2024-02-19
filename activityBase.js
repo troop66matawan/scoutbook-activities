@@ -28,7 +28,7 @@ class ScoutbookBaseLog {
                     this._count = intVal;
                 }
             } else {
-                this.count = floatVal;
+                this._count = floatVal;
             }
         } else if (Number.isInteger(value)) {
             this._count = value;
