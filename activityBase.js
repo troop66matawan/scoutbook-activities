@@ -21,9 +21,14 @@ class ScoutbookBaseLog {
 
     set count(value){
         if (typeof value === 'string') {
-            const intVal = Number.parseInt(value);
-            if (Number.isInteger(intVal)){
-                this._count = intVal;
+            const floatVal = Number.parseFloat(value);
+            if (Number.isNaN(floatVal)) {
+                const intVal = Number.parseInt(value);
+                if (Number.isInteger(intVal)) {
+                    this._count = intVal;
+                }
+            } else {
+                this.count = floatVal;
             }
         } else if (Number.isInteger(value)) {
             this._count = value;
